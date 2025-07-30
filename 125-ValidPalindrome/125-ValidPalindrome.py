@@ -1,7 +1,7 @@
-# Last updated: 7/30/2025, 1:27:14 PM
+# Last updated: 7/30/2025, 2:04:09 PM
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        l, r = 0, len(s)-1
+        '''l, r = 0, len(s)-1
 
         while l < r :
             if l < r and not self.alphaNum(s[l]):
@@ -19,4 +19,10 @@ class Solution:
         return True
 
     def alphaNum(self, s):
-        return (ord('A') <= ord(s) <= ord('Z') or ord('a') <= ord(s) <= ord('z') or ord('0') <= ord(s) <= ord('9')) 
+        return (ord('A') <= ord(s) <= ord('Z') or ord('a') <= ord(s) <= ord('z') or ord('0') <= ord(s) <= ord('9')) '''
+
+        new = ""
+        for i in s:
+            if i.isalnum() :
+                new += i.lower()
+        return new == new[::-1]
