@@ -1,10 +1,20 @@
-# Last updated: 7/31/2025, 4:46:33 PM
+# Last updated: 7/31/2025, 9:24:58 PM
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        hash = {}
+        '''hash = {}
         for i in range(len(numbers)) :
             if (target-numbers[i]) in hash :
                 return [hash[target-numbers[i]], i+1]
                 
-            hash[numbers[i]] = i+1
+            hash[numbers[i]] = i+1'''
+
+        l, r = 0, len(numbers)-1
+
+        while l < r :
+            if numbers[l] + numbers[r] == target :
+                return [l+1, r+1]
+            if numbers[l] + numbers[r] > target :
+                r -= 1
+            if numbers[l] + numbers[r] < target :
+                l += 1
             
