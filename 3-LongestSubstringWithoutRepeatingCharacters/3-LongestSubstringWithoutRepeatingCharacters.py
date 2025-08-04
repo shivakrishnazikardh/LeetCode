@@ -1,4 +1,4 @@
-# Last updated: 8/4/2025, 4:56:13 PM
+# Last updated: 8/4/2025, 4:57:53 PM
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         hash = set()
@@ -13,7 +13,7 @@ class Solution:
             
             hash.add(s[r])
             r += 1
-            msub = max(len(hash), msub)
+            msub = max(r-l, msub)
                 
         return msub
                 
