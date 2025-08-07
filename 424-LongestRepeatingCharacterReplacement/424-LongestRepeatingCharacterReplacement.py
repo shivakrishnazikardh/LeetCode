@@ -1,32 +1,17 @@
-# Last updated: 8/6/2025, 10:03:35 PM
+# Last updated: 8/6/2025, 10:56:26 PM
 class Solution:
-    def characterReplacement(self, s: str, k: int) -> int:
-        hash = {}
-        l, r = 0, 0
-        charl = [0] * 26
-        maxl, t = 0, 0
+    def isValid(self, s: str) -> bool:
+        hash = []
+        countermap = {')':'(', ']':'[', '}':'{'}
 
-        for i in range(len(s)):
-            hash[s[r]] = hash.get(s[r], 0) + 1
-            lenl = r - l + 1
-
-            if lenl - max(hash.values()) > k :
-                hash[s[l]] -= 1
-                l += 1
-                t = 0
-            
+        for i in s :
+            if i in countermap :
+                if hash and hash[-1] == countermap[i] :
+                    hash.pop()
+                else :
+                    return False
             else :
-                t += 1
-                maxl = max(maxl, lenl)
-                
-            
-            r += 1
+                hash.append(i)
 
-        return maxl
-
-
-
-
-
-            
+        return True if not hash else False
         
