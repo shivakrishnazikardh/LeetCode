@@ -1,4 +1,4 @@
-# Last updated: 8/19/2025, 10:27:59 PM
+# Last updated: 8/19/2025, 10:28:25 PM
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
